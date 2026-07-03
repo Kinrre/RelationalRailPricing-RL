@@ -1,0 +1,475 @@
+stations:
+- id: 'A'
+  name: Central_Hub
+  city: Central_Hub
+  short_name: A
+  coordinates:
+    latitude: 40.4168
+    longitude: -3.7038
+- id: 'B'
+  name: Secondary_Hub
+  city: Secondary_Hub
+  short_name: B
+  coordinates:
+    latitude: 41.3851
+    longitude: 2.1734
+- id: 'C'
+  name: Regional_Center
+  city: Regional_Center
+  short_name: C
+  coordinates:
+    latitude: 39.4699
+    longitude: -0.3763
+- id: 'D'
+  name: Tourist_Destination
+  city: Tourist_Destination
+  short_name: D
+  coordinates:
+    latitude: 37.3891
+    longitude: -5.9845
+- id: 'E'
+  name: Business_Center
+  city: Business_Center
+  short_name: E
+  coordinates:
+    latitude: 43.2627
+    longitude: -2.9253
+
+seat:
+- id: '1'
+  name: Basic
+  hard_type: 1
+  soft_type: 1
+- id: '2'
+  name: Premium
+  hard_type: 2
+  soft_type: 1
+
+corridor:
+- id: '1'
+  name: National_Network
+  stations:
+  - org: 'A'
+    des:
+    - org: 'B'
+      des: []
+    - org: 'C'
+      des: []
+    - org: 'D'
+      des: []
+    - org: 'E'
+      des: []
+  - org: 'B'
+    des:
+    - org: 'C'
+      des: []
+    - org: 'D'
+      des: []
+  - org: 'C'
+    des:
+    - org: 'D'
+      des: []
+
+line:
+- id: '1'
+  name: Line_A_B
+  corridor: '1'
+  stops:
+  - station: 'A'
+    arrival_time: 0
+    departure_time: 0
+  - station: 'B'
+    arrival_time: 120
+    departure_time: 120
+
+- id: '2'
+  name: Line_A_C
+  corridor: '1'
+  stops:
+  - station: 'A'
+    arrival_time: 0
+    departure_time: 0
+  - station: 'C'
+    arrival_time: 90
+    departure_time: 90
+
+- id: '3'
+  name: Line_A_D
+  corridor: '1'
+  stops:
+  - station: 'A'
+    arrival_time: 0
+    departure_time: 0
+  - station: 'D'
+    arrival_time: 150
+    departure_time: 150
+
+- id: '4'
+  name: Line_A_E
+  corridor: '1'
+  stops:
+  - station: 'A'
+    arrival_time: 0
+    departure_time: 0
+  - station: 'E'
+    arrival_time: 180
+    departure_time: 180
+
+- id: '5'
+  name: Line_B_C
+  corridor: '1'
+  stops:
+  - station: 'B'
+    arrival_time: 0
+    departure_time: 0
+  - station: 'C'
+    arrival_time: 60
+    departure_time: 60
+
+- id: '6'
+  name: Line_B_D
+  corridor: '1'
+  stops:
+  - station: 'B'
+    arrival_time: 0
+    departure_time: 0
+  - station: 'D'
+    arrival_time: 100
+    departure_time: 100
+
+- id: '7'
+  name: Line_C_D
+  corridor: '1'
+  stops:
+  - station: 'C'
+    arrival_time: 0
+    departure_time: 0
+  - station: 'D'
+    arrival_time: 80
+    departure_time: 80
+
+rollingStock:
+- id: 1
+  name: Efficient_Train
+  seats:
+  - hard_type: 1
+    quantity: 32
+  - hard_type: 2
+    quantity: 8
+
+trainServiceProvider:
+- id: '1'
+  name: Hub_Specialist
+  rolling_stock:
+  - '1'
+- id: '2'
+  name: Regional_Connector
+  rolling_stock:
+  - '1'
+- id: '3'
+  name: Network_Balancer
+  rolling_stock:
+  - '1'
+
+timeSlot:
+- id: '1'
+  start: '8:00:00'
+  end: '8:10:00'
+- id: '2'
+  start: '12:00:00'
+  end: '12:10:00'
+- id: '3'
+  start: '18:00:00'
+  end: '18:10:00'
+- id: '4'
+  start: '22:00:00'
+  end: '22:10:00'
+
+service:
+- id: agent1_ab_morning
+  date: '2023-09-06'
+  line: '1'
+  train_service_provider: '1'
+  time_slot: '1'
+  rolling_stock: '1'
+  origin_destination_tuples:
+  - origin: 'A'
+    destination: 'B'
+    seats:
+    - seat: '1'
+      price: 40.0
+    - seat: '2'
+      price: 60.0
+  capacity_constraints: null
+
+- id: agent1_ac_morning
+  date: '2023-09-06'
+  line: '2'
+  train_service_provider: '1'
+  time_slot: '1'
+  rolling_stock: '1'
+  origin_destination_tuples:
+  - origin: 'A'
+    destination: 'C'
+    seats:
+    - seat: '1'
+      price: 35.0
+    - seat: '2'
+      price: 50.0
+  capacity_constraints: null
+
+- id: agent1_ad_midday
+  date: '2023-09-06'
+  line: '3'
+  train_service_provider: '1'
+  time_slot: '2'
+  rolling_stock: '1'
+  origin_destination_tuples:
+  - origin: 'A'
+    destination: 'D'
+    seats:
+    - seat: '1'
+      price: 55.0
+    - seat: '2'
+      price: 80.0
+  capacity_constraints: null
+
+- id: agent1_ae_evening
+  date: '2023-09-06'
+  line: '4'
+  train_service_provider: '1'
+  time_slot: '3'
+  rolling_stock: '1'
+  origin_destination_tuples:
+  - origin: 'A'
+    destination: 'E'
+    seats:
+    - seat: '1'
+      price: 65.0
+    - seat: '2'
+      price: 90.0
+  capacity_constraints: null
+
+- id: agent1_bc_midday
+  date: '2023-09-06'
+  line: '5'
+  train_service_provider: '1'
+  time_slot: '2'
+  rolling_stock: '1'
+  origin_destination_tuples:
+  - origin: 'B'
+    destination: 'C'
+    seats:
+    - seat: '1'
+      price: 24.0
+    - seat: '2'
+      price: 34.0
+  capacity_constraints: null
+
+- id: agent1_bd_evening
+  date: '2023-09-06'
+  line: '6'
+  train_service_provider: '1'
+  time_slot: '3'
+  rolling_stock: '1'
+  origin_destination_tuples:
+  - origin: 'B'
+    destination: 'D'
+    seats:
+    - seat: '1'
+      price: 42.0
+    - seat: '2'
+      price: 60.0
+  capacity_constraints: null
+
+- id: agent2_ab_midday
+  date: '2023-09-06'
+  line: '1'
+  train_service_provider: '2'
+  time_slot: '2'
+  rolling_stock: '1'
+  origin_destination_tuples:
+  - origin: 'A'
+    destination: 'B'
+    seats:
+    - seat: '1'
+      price: 45.0
+    - seat: '2'
+      price: 65.0
+  capacity_constraints: null
+
+- id: agent2_ac_evening
+  date: '2023-09-06'
+  line: '2'
+  train_service_provider: '2'
+  time_slot: '3'
+  rolling_stock: '1'
+  origin_destination_tuples:
+  - origin: 'A'
+    destination: 'C'
+    seats:
+    - seat: '1'
+      price: 36.0
+    - seat: '2'
+      price: 52.0
+  capacity_constraints: null
+
+- id: agent2_ad_evening
+  date: '2023-09-06'
+  line: '3'
+  train_service_provider: '2'
+  time_slot: '3'
+  rolling_stock: '1'
+  origin_destination_tuples:
+  - origin: 'A'
+    destination: 'D'
+    seats:
+    - seat: '1'
+      price: 52.0
+    - seat: '2'
+      price: 78.0
+  capacity_constraints: null
+
+- id: agent2_bc_morning
+  date: '2023-09-06'
+  line: '5'
+  train_service_provider: '2'
+  time_slot: '1'
+  rolling_stock: '1'
+  origin_destination_tuples:
+  - origin: 'B'
+    destination: 'C'
+    seats:
+    - seat: '1'
+      price: 22.0
+    - seat: '2'
+      price: 32.0
+  capacity_constraints: null
+
+- id: agent2_bd_morning
+  date: '2023-09-06'
+  line: '6'
+  train_service_provider: '2'
+  time_slot: '1'
+  rolling_stock: '1'
+  origin_destination_tuples:
+  - origin: 'B'
+    destination: 'D'
+    seats:
+    - seat: '1'
+      price: 40.0
+    - seat: '2'
+      price: 58.0
+  capacity_constraints: null
+
+- id: agent2_cd_midday
+  date: '2023-09-06'
+  line: '7'
+  train_service_provider: '2'
+  time_slot: '2'
+  rolling_stock: '1'
+  origin_destination_tuples:
+  - origin: 'C'
+    destination: 'D'
+    seats:
+    - seat: '1'
+      price: 28.0
+    - seat: '2'
+      price: 42.0
+  capacity_constraints: null
+
+- id: agent3_ab_evening
+  date: '2023-09-06'
+  line: '1'
+  train_service_provider: '3'
+  time_slot: '3'
+  rolling_stock: '1'
+  origin_destination_tuples:
+  - origin: 'A'
+    destination: 'B'
+    seats:
+    - seat: '1'
+      price: 42.0
+    - seat: '2'
+      price: 62.0
+  capacity_constraints: null
+
+- id: agent3_ac_midday
+  date: '2023-09-06'
+  line: '2'
+  train_service_provider: '3'
+  time_slot: '2'
+  rolling_stock: '1'
+  origin_destination_tuples:
+  - origin: 'A'
+    destination: 'C'
+    seats:
+    - seat: '1'
+      price: 35.0
+    - seat: '2'
+      price: 51.0
+  capacity_constraints: null
+
+- id: agent3_ad_morning
+  date: '2023-09-06'
+  line: '3'
+  train_service_provider: '3'
+  time_slot: '1'
+  rolling_stock: '1'
+  origin_destination_tuples:
+  - origin: 'A'
+    destination: 'D'
+    seats:
+    - seat: '1'
+      price: 57.0
+    - seat: '2'
+      price: 82.0
+  capacity_constraints: null
+
+- id: agent3_ae_midday
+  date: '2023-09-06'
+  line: '4'
+  train_service_provider: '3'
+  time_slot: '2'
+  rolling_stock: '1'
+  origin_destination_tuples:
+  - origin: 'A'
+    destination: 'E'
+    seats:
+    - seat: '1'
+      price: 63.0
+    - seat: '2'
+      price: 88.0
+  capacity_constraints: null
+
+- id: agent3_bc_evening
+  date: '2023-09-06'
+  line: '5'
+  train_service_provider: '3'
+  time_slot: '3'
+  rolling_stock: '1'
+  origin_destination_tuples:
+  - origin: 'B'
+    destination: 'C'
+    seats:
+    - seat: '1'
+      price: 24.0
+    - seat: '2'
+      price: 35.0
+  capacity_constraints: null
+
+- id: agent3_cd_evening
+  date: '2023-09-06'
+  line: '7'
+  train_service_provider: '3'
+  time_slot: '3'
+  rolling_stock: '1'
+  origin_destination_tuples:
+  - origin: 'C'
+    destination: 'D'
+    seats:
+    - seat: '1'
+      price: 29.0
+    - seat: '2'
+      price: 43.0
+  capacity_constraints: null

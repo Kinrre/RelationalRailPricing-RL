@@ -1,0 +1,347 @@
+market:
+  - id: 1
+    departure_station: 'A'
+    arrival_station: 'B'
+  - id: 2
+    departure_station: 'A'
+    arrival_station: 'C'
+  - id: 3
+    departure_station: 'A'
+    arrival_station: 'D'
+  - id: 4
+    departure_station: 'A'
+    arrival_station: 'E'
+  - id: 5
+    departure_station: 'B'
+    arrival_station: 'C'
+  - id: 6
+    departure_station: 'B'
+    arrival_station: 'D'
+  - id: 7
+    departure_station: 'C'
+    arrival_station: 'D'
+
+userPattern:
+  - id: 1
+    name: Business
+    arrival_time: norm
+    arrival_time_kwargs:
+      loc: 8
+      scale: 0.8
+    purchase_day: randint
+    purchase_day_kwargs:
+      low: 2
+      high: 7
+    forbidden_departure_hours:
+      start: 10
+      end: 17
+    seats:
+      - id: 1
+        utility: 18
+      - id: 2
+        utility: 25
+    train_service_providers:
+      - id: 1
+        utility: 0
+      - id: 2
+        utility: 0
+      - id: 3
+        utility: 0
+    penalty_arrival_time: polynomial
+    penalty_arrival_time_kwargs:
+      b_0: 0
+      b_1: 0.8
+    penalty_departure_time: polynomial
+    penalty_departure_time_kwargs:
+      b_0: 0
+      b_1: 0.6
+    penalty_cost: polynomial
+    penalty_cost_kwargs:
+      b_0: 0
+      b_1: 0.04
+    penalty_travel_time: polynomial
+    penalty_travel_time_kwargs:
+      b_0: 0
+      b_1: 0.3
+    penalty_transfer_time: polynomial
+    penalty_transfer_time_kwargs:
+      b_0: 0
+      b_1: 0.4
+    penalty_n_transfers: polynomial
+    penalty_n_transfers_kwargs:
+      b_0: 0
+      b_1: 0.8
+    error: norm
+    error_kwargs:
+      loc: 2
+      scale: 0.8
+
+  - id: 2
+    name: Leisure
+    arrival_time: norm
+    arrival_time_kwargs:
+      loc: 14
+      scale: 4
+    purchase_day: randint
+    purchase_day_kwargs:
+      low: 0
+      high: 6
+    forbidden_departure_hours:
+      start: 6
+      end: 9
+    seats:
+      - id: 1
+        utility: 16
+      - id: 2
+        utility: 20
+    train_service_providers:
+      - id: 1
+        utility: 0
+      - id: 2
+        utility: 0
+      - id: 3
+        utility: 0
+    penalty_arrival_time: polynomial
+    penalty_arrival_time_kwargs:
+      b_0: 0
+      b_1: 0.2
+    penalty_departure_time: polynomial
+    penalty_departure_time_kwargs:
+      b_0: 0
+      b_1: 0.15
+    penalty_cost: polynomial
+    penalty_cost_kwargs:
+      b_0: 0
+      b_1: 0.25
+    penalty_travel_time: polynomial
+    penalty_travel_time_kwargs:
+      b_0: 0
+      b_1: 0.2
+    penalty_transfer_time: polynomial
+    penalty_transfer_time_kwargs:
+      b_0: 0
+      b_1: 0.1
+    penalty_n_transfers: polynomial
+    penalty_n_transfers_kwargs:
+      b_0: 0
+      b_1: 0.3
+    error: norm
+    error_kwargs:
+      loc: 3
+      scale: 1.5
+
+  - id: 3
+    name: Student
+    arrival_time: norm
+    arrival_time_kwargs:
+      loc: 16
+      scale: 3
+    purchase_day: randint
+    purchase_day_kwargs:
+      low: 0
+      high: 4
+    forbidden_departure_hours:
+      start: 6
+      end: 12
+    seats:
+      - id: 1
+        utility: 14
+      - id: 2
+        utility: 16
+    train_service_providers:
+      - id: 1
+        utility: 0
+      - id: 2
+        utility: 0
+      - id: 3
+        utility: 0
+    penalty_arrival_time: polynomial
+    penalty_arrival_time_kwargs:
+      b_0: 0
+      b_1: 0.1
+    penalty_departure_time: polynomial
+    penalty_departure_time_kwargs:
+      b_0: 0
+      b_1: 0.1
+    penalty_cost: polynomial
+    penalty_cost_kwargs:
+      b_0: 0
+      b_1: 0.45
+    penalty_travel_time: polynomial
+    penalty_travel_time_kwargs:
+      b_0: 0
+      b_1: 0.25
+    penalty_transfer_time: polynomial
+    penalty_transfer_time_kwargs:
+      b_0: 0
+      b_1: 0.05
+    penalty_n_transfers: polynomial
+    penalty_n_transfers_kwargs:
+      b_0: 0
+      b_1: 0.2
+    error: norm
+    error_kwargs:
+      loc: 4
+      scale: 2
+
+  - id: 4
+    name: Commuter
+    arrival_time: norm
+    arrival_time_kwargs:
+      loc: 9
+      scale: 1.5
+    purchase_day: randint
+    purchase_day_kwargs:
+      low: 1
+      high: 5
+    forbidden_departure_hours:
+      start: 10
+      end: 16
+    seats:
+      - id: 1
+        utility: 17
+      - id: 2
+        utility: 22
+    train_service_providers:
+      - id: 1
+        utility: 1
+      - id: 2
+        utility: 0
+      - id: 3
+        utility: 0
+    penalty_arrival_time: polynomial
+    penalty_arrival_time_kwargs:
+      b_0: 0
+      b_1: 1.2
+    penalty_departure_time: polynomial
+    penalty_departure_time_kwargs:
+      b_0: 0
+      b_1: 0.9
+    penalty_cost: polynomial
+    penalty_cost_kwargs:
+      b_0: 0
+      b_1: 0.15
+    penalty_travel_time: polynomial
+    penalty_travel_time_kwargs:
+      b_0: 0
+      b_1: 0.8
+    penalty_transfer_time: polynomial
+    penalty_transfer_time_kwargs:
+      b_0: 0
+      b_1: 1.0
+    penalty_n_transfers: polynomial
+    penalty_n_transfers_kwargs:
+      b_0: 0
+      b_1: 1.5
+    error: norm
+    error_kwargs:
+      loc: 1.5
+      scale: 0.8
+
+demandPattern:
+  - id: 1
+    name: Weekday_High
+    markets:
+      - market: 1
+        potential_demand: randint
+        potential_demand_kwargs:
+          low: 200
+          high: 251
+        user_pattern_distribution:
+          - id: 1
+            percentage: 0.45
+          - id: 4
+            percentage: 0.35
+          - id: 2
+            percentage: 0.15
+          - id: 3
+            percentage: 0.05
+      - market: 2
+        potential_demand: randint
+        potential_demand_kwargs:
+          low: 120
+          high: 171
+        user_pattern_distribution:
+          - id: 1
+            percentage: 0.5
+          - id: 4
+            percentage: 0.25
+          - id: 2
+            percentage: 0.2
+          - id: 3
+            percentage: 0.05
+      - market: 3
+        potential_demand: randint
+        potential_demand_kwargs:
+          low: 180
+          high: 231
+        user_pattern_distribution:
+          - id: 1
+            percentage: 0.4
+          - id: 2
+            percentage: 0.35
+          - id: 4
+            percentage: 0.2
+          - id: 3
+            percentage: 0.05
+      - market: 4
+        potential_demand: randint
+        potential_demand_kwargs:
+          low: 100
+          high: 141
+        user_pattern_distribution:
+          - id: 1
+            percentage: 0.65
+          - id: 4
+            percentage: 0.25
+          - id: 2
+            percentage: 0.08
+          - id: 3
+            percentage: 0.02
+      - market: 5
+        potential_demand: randint
+        potential_demand_kwargs:
+          low: 80
+          high: 121
+        user_pattern_distribution:
+          - id: 1
+            percentage: 0.3
+          - id: 2
+            percentage: 0.35
+          - id: 4
+            percentage: 0.25
+          - id: 3
+            percentage: 0.1
+      - market: 6
+        potential_demand: randint
+        potential_demand_kwargs:
+          low: 90
+          high: 131
+        user_pattern_distribution:
+          - id: 2
+            percentage: 0.45
+          - id: 1
+            percentage: 0.3
+          - id: 4
+            percentage: 0.15
+          - id: 3
+            percentage: 0.1
+      - market: 7
+        potential_demand: randint
+        potential_demand_kwargs:
+          low: 60
+          high: 91
+        user_pattern_distribution:
+          - id: 2
+            percentage: 0.5
+          - id: 1
+            percentage: 0.25
+          - id: 3
+            percentage: 0.15
+          - id: 4
+            percentage: 0.1
+
+day:
+  - id: 1
+    date: 2023-09-06
+    demandPattern: 1
