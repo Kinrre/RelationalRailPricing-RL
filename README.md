@@ -2,6 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
+[![ArXiv](https://img.shields.io/badge/arXiv-2501.08234-b31b1b.svg)](https://doi.org/10.48550/arXiv.2607.05179)
 
 ## 🛠️ Installation
 
@@ -37,4 +38,10 @@
 
 If you use this repo in your work, please consider citing the corresponding paper:
 
-To be included, as well as the arXiv button at the beginning of the README
+```bibtex
+@article{villarrubia2026relational,
+  title={Relational Multi-Agent Reinforcement Learning for Dynamic Pricing in High-Speed Railway Markets},
+  author={Villarrubia-Martin, Enrique Adrian and Mu{\~n}oz-Valero, David and Rodriguez-Benitez, Luis and Montana, Giovanni and Jimenez-Linares, Luis},
+  journal={arXiv preprint arXiv:2607.05179},
+  year={2026}
+}
