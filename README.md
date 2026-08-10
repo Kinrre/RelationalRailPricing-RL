@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
-[![ArXiv](https://img.shields.io/badge/arXiv-2501.08234-b31b1b.svg)](https://doi.org/10.48550/arXiv.2607.05179)
+[![ArXiv](https://img.shields.io/badge/arXiv-2607.05179-b31b1b.svg)](https://doi.org/10.48550/arXiv.2607.05179)
 
 ## 🛠️ Installation
 
